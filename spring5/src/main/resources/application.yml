@@ -2,8 +2,10 @@ spring:
   application:
     name: spring5
 
-fileName: questions
-fileExtension: csv
+
+file:
+  name: questions
+  extension: csv
 
 requiredNumber: 4
 

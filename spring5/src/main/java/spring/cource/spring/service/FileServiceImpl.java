@@ -13,10 +13,10 @@ import java.util.Locale;
 @Service
 @PropertySource("classpath:application.yml")
 public class FileServiceImpl implements FileService {
-    @Value("${fileName}")
+    @Value("${file.name}")
     private String fileName;
 
-    @Value("${fileExtension}")
+    @Value("${file.extension}")
     private String fileExtension;
 
     private final Locale locale = Locale.getDefault();
