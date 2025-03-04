@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: library
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=LEGACY
+#  h2:
+#    console:
+#      path: /h2-console
+#      settings:
+#        web-allow-others: true
+  liquibase:
+    enabled: true
+  shell:
+    script:
+      enabled: true
+    interactive:
+      enabled: true
