@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025-02-02--03-book-test-data
+      author: avnesiolovskaya
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: data/2025-02-02-03-books.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: books

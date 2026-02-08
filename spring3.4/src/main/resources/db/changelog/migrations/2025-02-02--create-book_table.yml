@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: create books table
+      author: avnesiolovskaya
+      changes:
+
+        - createTable:
+            remarks: Книги
+            tableName: books
+            columns:
+              - column:
+                  remarks: Идентификатор записи
+                  name: id
+                  type: bigint
+     #             autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book_id
+
+              - column:
+                  remarks: Наименование
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  remarks: Автор
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_book_author
+                    references: authors(id)
+                    deleteCascade: true
+              - column:
+                  remarks: Жанр
+                  name: genre_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_book_genre
+                    references: genres(id)
+                    deleteCascade: true
+              - column:
+                  remarks: Год издания
+                  name: publication_year
+                  type: int
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: add autoincrement books
+      author: avnesiolovskaya
+      changes:
+        - addAutoIncrement:
+            columnDataType: bigint
+            columnName: id
+            defaultOnNull: false
+            generationType: ALWAYS
+            incrementBy: 1
+            startWith: 100
+            tableName: books
+
