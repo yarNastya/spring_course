@@ -34,7 +34,7 @@ public class storageConfiguration {
                 .split()
                 .<Good, Boolean>route(Good::isPackInBox, m -> m
                         .subFlowMapping(true, sf -> sf
-                                .<Good>handle("packService", "packInBox")) // Sub-flow for even numbers
+                                .<Good>handle("packService", "packInBox"))
                         .subFlowMapping(false, sf -> sf
                                 .<Good>handle("packService", "packInMembrane")))
                 .aggregate()

@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 import springCourse.storage.service.MainService;
 
 @SpringBootApplication
-@ComponentScan
 public class App implements CommandLineRunner {
 
     @Autowired
